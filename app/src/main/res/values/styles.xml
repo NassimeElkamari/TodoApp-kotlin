@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ModernButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/buttonColor</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="FunQuizButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">#64B5F6</item> <!-- Light blue -->
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+
+
+</resources>

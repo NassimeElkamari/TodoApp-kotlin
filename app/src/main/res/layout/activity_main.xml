@@ -1,21 +1,132 @@
-<!-- res/layout/activity_main.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
     android:padding="16dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/taskRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/addTaskButton"
-        android:layout_marginBottom="16dp"/>
-
-    <Button
-        android:id="@+id/addTaskButton"
+    <!-- Welcome Message -->
+    <TextView
+        android:id="@+id/userNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Task"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
-</RelativeLayout>
+        android:text="👋 Welcome, Player!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- High Score -->
+    <TextView
+        android:id="@+id/highScoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="High Score: 0"
+        android:textSize="16sp"
+        android:textColor="#666"
+        app:layout_constraintTop_toBottomOf="@id/userNameText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="0"
+        android:max="100"
+        android:progressTint="#7E57C2"
+        android:backgroundTint="#E0E0E0"
+        app:layout_constraintTop_toBottomOf="@id/highScoreText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+
+    <!-- Quiz Image -->
+    <ImageView
+        android:id="@+id/quizImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/b"
+        android:contentDescription="Quiz Visual"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitCenter"/>
+
+
+    <!-- Question Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/questionCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/option1Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is the capital of France?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#444"
+            android:gravity="center"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Option Buttons -->
+    <Button
+        android:id="@+id/option1Button"
+        style="@style/FunQuizButton"
+        android:text="Option 1"
+        app:layout_constraintBottom_toTopOf="@id/option2Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/option2Button"
+        style="@style/FunQuizButton"
+        android:text="Option 2"
+        app:layout_constraintBottom_toTopOf="@id/option3Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/option3Button"
+        style="@style/FunQuizButton"
+        android:text="Option 3"
+        app:layout_constraintBottom_toTopOf="@id/restartButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Restart Button -->
+    <Button
+        android:id="@+id/restartButton"
+        style="@style/FunQuizButton"
+        android:text="Restart Quiz"
+        android:backgroundTint="#FF8A65"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

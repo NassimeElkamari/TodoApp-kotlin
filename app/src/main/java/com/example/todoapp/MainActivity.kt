@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val userName = intent.getStringExtra("USER_NAME")
-        binding.userNameText.text = "Welcome, $userName!"
+        binding.userNameText.text = "Welcome, Nassime!"
 
 
         sharedPreferences = getSharedPreferences("quiz_prefs", MODE_PRIVATE)

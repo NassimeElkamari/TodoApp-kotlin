@@ -1,0 +1,32 @@
+name: Android Debug Build
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  manual: true
+
+env:
+  JAVA_VERSION: "17"
+
+stages:
+  - name: Setup
+    commands:
+      - echo "Setting up Android build environment"
+      - chmod +x ./gradlew
+    timeout: 60
+    continue_on_error: false
+
+  - name: Build
+    commands:
+      - ./gradlew assembleDebug
+    timeout: 600
+    continue_on_error: false
+
+  - name: Test
+    commands:
+      - ./gradlew test
+      - ./gradlew lint
+    timeout: 300
+    continue_on_error: true

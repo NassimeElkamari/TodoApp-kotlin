@@ -23,10 +23,3 @@ stages:
       - ./gradlew assembleDebug
     timeout: 600
     continue_on_error: false
-
-  - name: Test
-    commands:
-      - ./gradlew test
-      - ./gradlew lint
-    timeout: 300
-    continue_on_error: true

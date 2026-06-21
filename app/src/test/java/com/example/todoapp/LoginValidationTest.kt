@@ -7,6 +7,6 @@ class IntentionalFailureTest {
 
     @Test
     fun ciPipeline_shouldFail_onPurpose() {
-        assertEquals("Intentional failure for CI/CD validation", 1, 2)
+        assertEquals("LoginValidationTest for CI/CD validation", 1, 2)
     }
 }

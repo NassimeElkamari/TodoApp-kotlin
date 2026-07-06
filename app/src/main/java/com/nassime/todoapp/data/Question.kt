@@ -1,4 +1,4 @@
-package com.example.todoapp.data
+package com.nassime.todoapp.data
 
 data class Question(
     val questionText: String,

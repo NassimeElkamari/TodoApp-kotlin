@@ -1,4 +1,4 @@
-package com.example.todoapp
+package com.nassime.todoapp
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

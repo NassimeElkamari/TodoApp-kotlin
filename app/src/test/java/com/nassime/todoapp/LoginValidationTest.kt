@@ -1,12 +1,22 @@
 package com.nassime.todoapp
 
-import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
-class IntentionalFailureTest {
+class LoginValidationTest {
 
     @Test
-    fun ciPipeline_shouldFail_onPurpose() {
-        assertEquals("Login Validation Test for CI/CD validation", 1, 2)
+    fun blankEmail_isInvalid() {
+        assertFalse(isValidEmail(""))
+    }
+
+    @Test
+    fun validEmail_isAccepted() {
+        assertTrue(isValidEmail("user@example.com"))
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return email.isNotBlank() && email.contains("@")
     }
 }

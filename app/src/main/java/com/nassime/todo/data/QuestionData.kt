@@ -1,4 +1,4 @@
-package com.nassime.todoapp.data
+package com.nassime.todo.data
 
 object QuestionData {
     val questions = listOf(

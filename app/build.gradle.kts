@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.nassime.todoapp"
+    namespace = "com.nassime.todo"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.nassime.todoapp"
+        applicationId = "com.nassime.todo"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

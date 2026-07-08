@@ -1,4 +1,4 @@
-package com.nassime.todoapp
+package com.nassime.todo
 
 import android.content.Intent
 import android.graphics.Color
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import android.widget.Button
 import android.widget.Toast
 import android.content.SharedPreferences
-import com.nassime.todoapp.data.QuestionData
-import com.nassime.todoapp.databinding.ActivityMainBinding
+import com.nassime.todo.data.QuestionData
+import com.nassime.todo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

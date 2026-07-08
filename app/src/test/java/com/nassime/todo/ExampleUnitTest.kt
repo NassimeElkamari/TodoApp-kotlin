@@ -1,4 +1,4 @@
-package com.nassime.todoapp
+package com.nassime.todo
 
 import org.junit.Test
 
